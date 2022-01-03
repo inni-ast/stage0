@@ -265,6 +265,9 @@ a {
 }
 .portfolio__btn:hover {
 	background: #bdae82;
+}
+.portfolio__btn:hover a {
+	background: #bdae82;
 	color: #000;
 }
 .portfolio__link:hover {
