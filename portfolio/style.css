@@ -1,0 +1,240 @@
+/*fonts*/
+/* inter-regular - latin */
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	src: url("assets/fonts/inter-v7-latin-regular.eot"); /* IE9 Compat Modes */
+	src: local(""), url("assets/fonts/inter-v7-latin-regular.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */ url("assets/fonts/inter-v7-latin-regular.woff2") format("woff2"),
+		/* Super Modern Browsers */ url("assets/fonts/inter-v7-latin-regular.woff") format("woff"),
+		/* Modern Browsers */ url("assets/fonts/inter-v7-latin-regular.ttf") format("truetype"),
+		/* Safari, Android, iOS */ url("assets/fonts/inter-v7-latin-regular.svg#Inter") format("svg"); /* Legacy iOS */
+}
+/* inter-700 - latin */
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 700;
+	src: url("assets/fonts/inter-v7-latin-700.eot"); /* IE9 Compat Modes */
+	src: local(""), url("assets/fonts/inter-v7-latin-700.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */ url("assets/fonts/inter-v7-latin-700.woff2") format("woff2"),
+		/* Super Modern Browsers */ url("assets/fonts/inter-v7-latin-700.woff") format("woff"),
+		/* Modern Browsers */ url("assets/fonts/inter-v7-latin-700.ttf") format("truetype"),
+		/* Safari, Android, iOS */ url("assets/fonts/inter-v7-latin-700.svg#Inter") format("svg"); /* Legacy iOS */
+}
+
+/* merriweather-700 - latin */
+@font-face {
+	font-family: "Merriweather";
+	font-style: normal;
+	font-weight: 700;
+	src: url("assets/fonts/merriweather-v28-latin-700.eot"); /* IE9 Compat Modes */
+	src: local(""), url("assets/fonts/merriweather-v28-latin-700.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */ url("assets/fonts/merriweather-v28-latin-700.woff2") format("woff2"),
+		/* Super Modern Browsers */ url("assets/fonts/merriweather-v28-latin-700.woff") format("woff"),
+		/* Modern Browsers */ url("assets/fonts/merriweather-v28-latin-700.ttf") format("truetype"),
+		/* Safari, Android, iOS */ url("assets/fonts/merriweather-v28-latin-700.svg#Merriweather") format("svg"); /* Legacy iOS */
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+html {
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+body {
+	font-family: "Inter";
+	font-size: 18px;
+	color: #ffffff;
+}
+a {
+	text-decoration: none;
+}
+.wrapper {
+}
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 20px;
+	background-color: #000;
+}
+.list {
+	list-style: none;
+}
+/*header styles start*/
+
+.header {
+}
+.header-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background: url("assets/img/bg.jpg");
+	background-repeat: no-repeat;
+	background-position: center 0;
+	height: 90px;
+}
+.header__logo {
+}
+.header__img {
+}
+.header__nav {
+	margin-left: auto;
+}
+.header__list {
+	display: flex;
+}
+.list__item {
+	margin: 0 20px;
+	line-height: 50px;
+}
+.list__item a {
+	font-size: 20px;
+	color: #fff;
+}
+.header__lang span {
+	padding: 0 8px;
+}
+.header__link {
+	color: #fff;
+}
+
+.section-title {
+	font-family: "Merriweather";
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 80px;
+	text-align: center;
+	color: #bdae82;
+	margin: 0 auto;
+}
+.title__wrap {
+	width: 50%;
+	overflow-x: hidden;
+	text-align: center;
+	margin: 0 auto;
+}
+.skills__header {
+}
+.title__wrap h2::before,
+.title__wrap h2::after {
+	content: "";
+	background: #bdae82;
+	display: inline-block;
+	height: 2px;
+	position: relative;
+	vertical-align: middle;
+	width: 70%;
+}
+.title__wrap h2::before {
+	right: 20px;
+	margin-left: -50%;
+}
+.title__wrap h2::after {
+	left: 20px;
+	margin-right: -50%;
+}
+
+/* header styles end*/
+/* hero stales start*/
+.main {
+}
+.hero-container {
+	background-image: url("assets/img/bg.jpg");
+	background-position: center -90px;
+	background-repeat: no-repeat;
+	min-height: 820px;
+	margin: 0 -20px;
+	margin-bottom: 100px;
+}
+.hero {
+	padding: 160px 0 0 80px;
+}
+.hero__title {
+	font-family: Merriweather;
+	font-weight: bold;
+	font-size: 60px;
+	line-height: 120px;
+	margin-bottom: 10px;
+}
+.hero__description {
+	font-size: 20px;
+	line-height: 40px;
+	max-width: 470px;
+	margin-bottom: 25px;
+}
+.text {
+}
+.hero__btn {
+	background-color: #bdae82;
+}
+.btn {
+	height: 55px;
+	width: 220px;
+	border: 0;
+	cursor: pointer;
+	font-family: inherit;
+}
+.hero-link {
+}
+.link {
+	color: #000;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+}
+/*styles for skills start*/
+.skills {
+	min-height: 480px;
+}
+/*.skills-header {
+
+}*/
+.skills__block {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 -40px;
+	padding: 0 40px;
+}
+.skills__element {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+}
+.skills__element {
+	flex: 1 1 280px;
+	background-position: center 60px;
+}
+.skills__element:nth-child(1) {
+	background: url(assets/svg/vector1.svg) center 60px /61.82px 41.31px no-repeat;
+}
+.skills__element:nth-child(2) {
+	background: url(assets/svg/vector2.svg) center 60px/60px 50px no-repeat;
+}
+.skills__element:nth-child(3) {
+	background: url(assets/svg/vector3.svg) center 60px/66px 50px no-repeat;
+}
+.skills__element:nth-child(4) {
+	background: url(assets/svg/Vector4.svg) center 60px/32px 50px no-repeat;
+}
+
+.skills__title {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	padding-top: 160px;
+	margin-bottom: 20px;
+}
+.skills__subtitle {
+	text-align: center;
+	line-height: 36px;
+	font-size: 18px;
+}
