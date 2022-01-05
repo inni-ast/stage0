@@ -105,12 +105,20 @@ a {
 .list__item a {
 	font-size: var(--font-second);
 	color: var(--color-white);
+	transition: color 0.7s;
+}
+.list__item:hover a {
+	color: var(--color-gold);
 }
 .header__lang span {
 	padding: 0 8px;
 }
 .header__link {
 	color: var(--color-white);
+	transition: color 0.7s;
+}
+.header__link:hover {
+	color: var(--color-gold);
 }
 .active {
 	color: var(--color-gold);
