@@ -27,7 +27,7 @@
 					</ul>
 				</nav>
 				<div class="header__lang">
-					<a href="#" class="header__link">en</a>
+					<a href="#" class="header__link active">en</a>
 					<span>/</span>
 					<a href="#" class="header__link">ru</a>
 				</div>
@@ -40,10 +40,9 @@
 						<h1 class="hero__title">Alexa Rise</h1>
 						<p class="hero__description text">Save sincere emotions, romantic feelings and happy moments of life
 							together with professional photographer Alexa Rise</p>
-						<button class="hero__btn btn"><a href="#" class="hero__link link">Hire me</a></button>
-						<div>
+						<button class="hero__btn btn">Hire me</button>
+					</div>
 				</section>
-
 				<section class="section skills" id="skills">
 					<div class="title__wrap">
 						<h2 class="section-title skills__header">Skills</h2>
@@ -56,15 +55,15 @@
 						<div class="skills__element skills__video">
 							<h3 class="skills__title">Video shooting</h3>
 							<p class="skills__subtitle">Capture your moments so that they always stay with you</p>
-						</div class="skills__element">
+						</div>
 						<div class="skills__element skills__retouch">
 							<h3 class="skills__title">Retouch</h3>
 							<p class="skills__subtitle">I strive to make photography surpass reality</p>
-						</div class="skills__element">
+						</div>
 						<div class="skills__element skills__audio">
 							<h3 class="skills__title">Audio</h3>
 							<p class="skills__subtitle">Professional sounds recording for video, advertising, portfolio</p>
-						</div class="skills__element">
+						</div>
 					</div>
 				</section>
 				<section class="section portfolo" id="portfolio">
@@ -72,10 +71,10 @@
 						<h2 class="section-title portfolio__header">Portfolio</h2>
 					</div>
 					<div class="portfolio__seasons">
-						<button class="portfolio__btn btn"><a href="#" class="portfolio__link">Winter</a></button>
-						<button class="portfolio__btn btn"><a href="#" class="portfolio__link">Spring</a></button>
-						<button class="portfolio__btn btn"><a href="#" class="portfolio__link">Summer</a></button>
-						<button class="portfolio__btn btn"><a href="#" class="portfolio__link">Autumn</a></button>
+						<button class="portfolio__btn btn">Winter</button>
+						<button class="portfolio__btn btn">Spring</button>
+						<button class="portfolio__btn btn">Summer</button>
+						<button class="portfolio__btn btn active-btn">Autumn</button>
 					</div>
 					<div class="portfolio__images">
 						<img src="assets/img/portfolio-img-1.jpg" alt="young people" class="portfolio__image">
@@ -97,17 +96,92 @@
 						</button>
 					</div>
 				</section>
-				<section class="section" id="price">
-					<h2 class="section-title"></h2>
-				</section>
-				<section class="section" id="contacts">
-					<h2 class="section-title"></h2>
+				<section class="section price" id="price">
+					<div class="title__wrap">
+						<h2 class="section-title price-header">Price</h2>
+					</div>
+					<div class="price__items">
+						<div class="price__element">
+							<h3 class="price__title">Standard</h3>
+							<p class="price__subtitle">500 $</p>
+							<p class="price__description">
+								<span>One location</span>
+								<span>120 photos in color</span>
+								<span>12 photos in retouch</span>
+								<span>Readiness 2-3 weeks</span>
+								<span>Make up, visage</span>
+							</p>
+							<button class="price__button btn">Order shooting</button>
+						</div>
+						<div class=" price__element">
+							<h3 class="price__title">Premium</h3>
+							<p class="price__subtitle">700 $</p>
+							<p class="price__description">
+								<span>One or two locations</span>
+								<span>200 photos in color</span>
+								<span>20 photos in retouch</span>
+								<span>Readiness 1-2 weeks</span>
+								<span>Make up, visage</span>
+							</p>
+							<button class="price__button btn">Order shooting</button>
+						</div>
+						<div class=" price__element">
+							<h3 class="price__title">Gold</h3>
+							<p class="price__subtitle">1000 $</p>
+							<p class="price__description">
+								<span>Three locations or more</span>
+								<span>300 photos in color</span>
+								<span>50 photos in retouch</span>
+								<span>Readiness 1 week</span>
+								<span>Make up, visage, hairstyle</span>
+							</p>
+							<button class="price__button btn">Order shooting </button>
+						</div>
+					</div>
 				</section>
 			</div>
+			<section class="section contacts" id="contacts">
+				<div class="contacts-container container">
+					<div class="contacts__item">
+						<h2 class="contacts__header">Contact me</h2>
+						<form action="#" class="contacts-form">
+							<label><input type="email" name="userEmail" placeholder="E-mail"></label>
+							<label><input type="tel" name="userPhone" placeholder="Phone"></label>
+							<textarea name="userMassage" id="massage" placeholder="Message"></textarea>
+							<button type="submit" class="contacts__btn btn">Send message</button>
+						</form>
+					</div>
+				</div>
+			</section>
 		</main>
-
-		<footer class="footer">
-			<div class="container"></div>
+		<footer class="footer ">
+			<div class="container">
+				<div class="footer__items">
+					<div class="footer__author ">
+						<span>&copy;</span>
+						<time>2022</time>
+						<a href="https://github.com/inni-ast">github</a>
+					</div>
+					<div class="footer__school-link">
+						<a href="https://rs.school/js-stage0/">Rolling Scopes School</a>
+					</div>
+					<div class="footer__element">
+						<ul class="footer__list list">
+							<li class="footer__link"><a href="https://www.instagram.com/"><img src="assets/svg/inst.svg"
+										class="footer__logo" alt="logo instagram"></a>
+							</li>
+							<li class="footer__link"><a href="https://www.facebook.com/"><img src="assets/svg/fb.svg"
+										class="footer__logo" alt="logo facebook"></a>
+							</li>
+							<li class="footer__link"><a href="https://twitter.com/?lang=ru"><img src="assets/svg/tw.svg"
+										class="footer__logo" alt="logo twitter"></a>
+							</li>
+							<li class="footer__link"><a href="https://www.pinterest.com/"><img src="assets/svg/pinterest.svg"
+										class="footer__logo" alt="logo pinterest"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</footer>
 	</div>
 	<script src="index.js"></script>
