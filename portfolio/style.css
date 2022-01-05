@@ -42,8 +42,6 @@
 	--color-gold: #bdae82;
 	--color-black: #000;
 	--color-white: #fff;
-	--transition: color 2s, border 0.5s, background 0.1s;
-	--transition-color: color 1s;
 }
 * {
 	padding: 0;
@@ -59,11 +57,11 @@ html {
 	box-sizing: inherit;
 }
 body {
+	min-height: 100%;
 	font-family: "Inter";
 	font-size: var(--font-first);
 	background-color: var(--color-black);
 	color: var(--color-white);
-	min-height: 100%;
 }
 a {
 	text-decoration: none;
@@ -85,18 +83,14 @@ a {
 .header {
 }
 .header-container {
+	height: 90px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+	gap: 30px;
 	background: url("assets/img/bg.jpg");
 	background-repeat: no-repeat;
 	background-position: center 0;
-	height: 90px;
-	gap: 30px;
-}
-.header__logo {
-}
-.header__img {
 }
 .header__nav {
 	margin-left: auto;
@@ -122,31 +116,31 @@ a {
 	color: var(--color-gold);
 }
 .section-title {
+	margin: 0 auto;
 	font-family: "Merriweather";
 	font-weight: 700;
 	font-size: 40px;
 	line-height: 80px;
 	text-align: center;
 	color: var(--color-gold);
-	margin: 0 auto;
 }
 .title__wrap {
 	width: 50%;
+	margin: 0 auto;
 	overflow-x: hidden;
 	text-align: center;
-	margin: 0 auto;
 }
 .skills__header {
 }
 .title__wrap h2::before,
 .title__wrap h2::after {
+	position: relative;
 	content: "";
-	background: var(--color-gold);
+	width: 70%;
 	display: inline-block;
 	height: 2px;
-	position: relative;
 	vertical-align: middle;
-	width: 70%;
+	background: var(--color-gold);
 }
 .title__wrap h2::before {
 	right: 20px;
@@ -162,43 +156,43 @@ a {
 .main {
 }
 .hero-container {
-	background-image: url("assets/img/bg.jpg");
-	background-position: center -90px;
-	background-repeat: no-repeat;
 	min-height: 820px;
 	margin: 0 -20px;
 	margin-bottom: 100px;
+	background-image: url("assets/img/bg.jpg");
+	background-position: center -90px;
+	background-repeat: no-repeat;
 }
 .hero {
 	padding: 160px 0 0 80px;
 }
 .hero__title {
+	margin-bottom: 10px;
 	font-family: Merriweather;
 	font-weight: bold;
 	font-size: 60px;
 	line-height: 120px;
-	margin-bottom: 10px;
 }
 .hero__description {
-	font-size: var(--font-second);
-	line-height: 40px;
 	max-width: 470px;
 	margin-bottom: 25px;
+	font-size: var(--font-second);
+	line-height: 40px;
 }
 .hero__btn {
-	background-color: var(--color-gold);
-	color: var(--color-black);
 	font-size: var(--font-second);
 	line-height: 40px;
 	text-align: center;
-	transition: var(--transition);
+	background-color: var(--color-gold);
+	color: var(--color-black);
+	transition: color 2s, border 0.5s, background 0.1s;
 }
 .btn {
 	height: 55px;
 	width: 220px;
+	font-family: inherit;
 	border: 0;
 	cursor: pointer;
-	font-family: inherit;
 }
 .hero__btn:hover,
 .hero__btn:active {
@@ -210,9 +204,6 @@ a {
 .skills {
 	min-height: 480px;
 }
-/*.skills-header {
-
-}*/
 .skills__block {
 	display: flex;
 	justify-content: space-between;
@@ -240,19 +231,18 @@ a {
 .skills__element:nth-child(4) {
 	background: url(assets/svg/Vector4.svg) center 60px/32px 50px no-repeat;
 }
-
 .skills__title {
+	padding-top: 160px;
+	margin-bottom: 20px;
 	font-weight: 700;
 	font-size: var(--font-second);
 	line-height: 40px;
 	text-align: center;
-	padding-top: 160px;
-	margin-bottom: 20px;
 }
 .skills__subtitle {
 	text-align: center;
 	line-height: 36px;
-	font-size: 18px;
+	font-size: var(--font-first);
 }
 /*skills styles end*/
 
@@ -261,21 +251,21 @@ a {
 	margin-bottom: 60px;
 }
 .portfolio__seasons {
+	margin-bottom: 60px;
 	display: flex;
 	gap: 5px;
 	justify-content: center;
-	margin-bottom: 60px;
 	flex-wrap: wrap;
 }
 .portfolio__btn {
+	font-size: var(--font-second);
+	line-height: 40px;
+	text-align: center;
 	background-color: transparent;
 	border: 2px solid var(--color-gold);
 	border-radius: 0px;
 	color: var(--color-gold);
-	font-size: var(--font-second);
-	line-height: 40px;
-	text-align: center;
-	transition: var(--transition);
+	transition: color 2s, border 0.5s, background 0.1s;
 }
 .portfolio__btn:hover,
 .portfolio__btn:active {
@@ -337,53 +327,53 @@ a {
 	flex: 1;
 	border: 3px solid var(--color-gold);
 	box-sizing: border-box;
-	border-radius: 0px;
+	border-radius: 0;
 	padding-bottom: 40px;
 }
 .price__title {
+	margin-bottom: 20px;
+	padding-top: 43px;
 	font-family: Merriweather;
 	font-weight: bold;
 	font-size: 28px;
 	line-height: 56px;
 	text-align: center;
 	color: var(--color-white);
-	margin-bottom: 20px;
-	padding-top: 43px;
 }
 .price__subtitle {
+	margin-bottom: 20px;
 	font-family: Merriweather;
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 48px;
 	text-align: center;
 	color: var(--color-gold);
-	margin-bottom: 20px;
 }
 .price__description {
+	margin-bottom: 40px;
 	line-height: 36px;
 	text-align: center;
 	color: var(--color-white);
-	margin-bottom: 40px;
 }
 .price__description span {
 	display: block;
 }
 .price__button {
+	margin: 0 auto;
+	display: block;
+	border-radius: 0px;
 	font-size: var(--font-second);
 	line-height: 40px;
 	text-align: center;
 	color: var(--color-black);
-	margin: 0 auto;
 	background: var(--color-gold);
-	display: block;
-	border-radius: 0px;
-	transition: var(--transition);
+	transition: color 2s, border 0.5s, background 0.1s;
 }
 .price__button:hover,
 .price__button:active {
+	border: 2px solid var(--color-gold);
 	color: var(--color-gold);
 	background: var(--color-black);
-	border: 2px solid var(--color-gold);
 }
 /*price styles and*/
 
@@ -391,10 +381,10 @@ a {
 .contacts {
 }
 .contacts-container {
+	height: 700px;
 	background: url("assets/img/contacts.jpg") no-repeat;
 	background-size: auto 700px;
 	background-position: center center;
-	height: 700px;
 }
 .contacts__item {
 	display: flex;
@@ -402,15 +392,15 @@ a {
 	align-items: flex-end;
 }
 .contacts__header {
+	width: 450px;
+	padding-top: 60px;
+	margin-bottom: 40px;
 	font-family: Merriweather;
 	font-weight: bold;
 	font-size: 40px;
 	line-height: 80px;
 	color: var(--color-gold);
 	text-align: left;
-	width: 450px;
-	padding-top: 60px;
-	margin-bottom: 40px;
 }
 .contacts-form {
 	display: flex;
@@ -420,22 +410,22 @@ a {
 .contacts-form input,
 .contacts-form textarea {
 	width: 450px;
-	background: transparent;
-	vertical-align: top;
 	border: 2px solid var(--color-gold);
 	font-family: "Inter";
+	background: transparent;
+	vertical-align: top;
 }
 .contacts-form input {
 	height: 50px;
 }
 
 ::placeholder {
+	padding-left: 20px;
+	padding-top: 5px;
 	font-family: "Inter";
 	color: var(--color-gold);
 	font-size: var(--font-second);
 	line-height: 40px;
-	padding-left: 20px;
-	padding-top: 5px;
 }
 .contacts-form textarea {
 	height: 100px;
@@ -450,7 +440,7 @@ a {
 	color: var(--color-black);
 	background: var(--color-gold);
 	border-radius: 0px;
-	transition: var(--transition);
+	transition: color 2s, border 0.5s, background 0.1s;
 }
 .contacts__btn:hover,
 .contacts__btn:active {
@@ -471,7 +461,7 @@ a {
 	flex-wrap: wrap;
 	height: 150px;
 	font-family: "Inter";
-	font-size: 20px;
+	font-size: var(--font-second);
 	text-align: center;
 	color: var(--color-white);
 }
@@ -485,7 +475,7 @@ a {
 	font-size: var(--font-second);
 	text-align: right;
 	color: var(--color-white);
-	transition: var(--transition-color);
+	transition: color 0.8s;
 }
 .footer__school-link a {
 	padding-left: 22px;
