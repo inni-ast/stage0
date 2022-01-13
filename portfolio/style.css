@@ -79,8 +79,17 @@ a {
 	list-style: none;
 }
 /*header styles start*/
-
-.header {
+.header__logo .icon {
+	width: 50px;
+	height: 50px;
+	fill: var(--color-white);
+}
+.icon {
+	fill: var(--color-white);
+	transition: 0.8s;
+}
+.icon:hover {
+	fill: var(--color-gold);
 }
 .header-container {
 	height: 90px;
@@ -164,7 +173,7 @@ a {
 .main {
 }
 .hero-container {
-	min-height: 820px;
+	height: 820px;
 	margin: 0 -20px;
 	margin-bottom: 100px;
 	background-image: url("assets/img/bg.jpg");
@@ -494,6 +503,22 @@ a {
 }
 .footer__list {
 	display: flex;
-	gap: 22px;
+	gap: 20px;
 	align-items: center;
+}
+.icon-inst {
+	width: 32px;
+	height: 32px;
+}
+.icon-fb {
+	width: 32px;
+	height: 32px;
+}
+.icon-tw {
+	width: 32px;
+	height: 32px;
+}
+.icon-pinterest {
+	width: 32px;
+	height: 32px;
 }
