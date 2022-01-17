@@ -36,9 +36,15 @@
 		/* Modern Browsers */ url("assets/fonts/merriweather-v28-latin-700.ttf") format("truetype"),
 		/* Safari, Android, iOS */ url("assets/fonts/merriweather-v28-latin-700.svg#Merriweather") format("svg"); /* Legacy iOS */
 }
+@media (max-width: 1440px) {
+	.skills-items {
+		justify-content: space-around;
+	}
+}
+
 :root {
-	--font-first: 18px;
-	--font-second: 20px;
+	--font-first: 1.125rem;
+	--font-second: 1.25rem;
 	--color-gold: #bdae82;
 	--color-black: #000;
 	--color-white: #fff;
@@ -60,7 +66,7 @@ body {
 	min-height: 100%;
 	font-family: "Inter";
 	font-size: var(--font-first);
-	background-color: var(--color-black);
+	/*background-color: var(--color-black);*/
 	color: var(--color-white);
 }
 a {
@@ -70,7 +76,7 @@ a {
 .wrapper {
 }
 .container {
-	width: 1440px;
+	max-width: 1440px;
 	margin: 0 auto;
 	padding: 0 20px;
 	background-color: var(--color-black);
@@ -114,7 +120,7 @@ a {
 .list__item a {
 	font-size: var(--font-second);
 	color: var(--color-white);
-	transition: color 0.7s;
+	transition: color 0.8s;
 }
 .list__item:hover a {
 	color: var(--color-gold);
@@ -124,7 +130,7 @@ a {
 }
 .header__link {
 	color: var(--color-white);
-	transition: color 0.7s;
+	transition: color 0.8s;
 }
 .header__link:hover {
 	color: var(--color-gold);
@@ -202,7 +208,7 @@ a {
 	text-align: center;
 	background-color: var(--color-gold);
 	color: var(--color-black);
-	transition: color 2s, border 0.5s, background 0.1s;
+	transition: color 1s;
 }
 .btn {
 	height: 55px;
@@ -213,9 +219,7 @@ a {
 }
 .hero__btn:hover,
 .hero__btn:active {
-	background: var(--color-black);
-	border: 2px solid var(--color-gold);
-	color: var(--color-gold);
+	color: var(--color-white);
 }
 /*styles for skills start*/
 .skills {
@@ -282,17 +286,18 @@ a {
 	border: 2px solid var(--color-gold);
 	border-radius: 0px;
 	color: var(--color-gold);
-	transition: color 2s, border 0.5s, background 0.1s;
+	transition: color 1s;
 }
 .portfolio__btn:hover,
 .portfolio__btn:active {
-	background: var(--color-gold);
-	color: var(--color-black);
-	border: 2px solid var(--color-gold);
+	color: var(--color-white);
 }
 .active-btn {
 	background: var(--color-gold);
 	color: var(--color-black);
+}
+.active-btn:hover {
+	color: var(--color-white);
 }
 .portfolio__images {
 	display: flex;
@@ -320,11 +325,13 @@ a {
 .video__item {
 }
 
-.video__button img {
+.video__button svg {
 	position: absolute;
 	left: 636px;
 	top: 288px;
 	max-width: 100%;
+	width: 130px;
+	height: 130px;
 }
 /*player styles end*/
 /*price styles start*/
@@ -384,13 +391,11 @@ a {
 	text-align: center;
 	color: var(--color-black);
 	background: var(--color-gold);
-	transition: color 2s, border 0.5s, background 0.1s;
+	transition: color 1s;
 }
 .price__button:hover,
 .price__button:active {
-	border: 2px solid var(--color-gold);
-	color: var(--color-gold);
-	background: var(--color-black);
+	color: var(--color-white);
 }
 /*price styles and*/
 
@@ -457,13 +462,11 @@ a {
 	color: var(--color-black);
 	background: var(--color-gold);
 	border-radius: 0px;
-	transition: color 2s, border 0.5s, background 0.1s;
+	transition: color 1s;
 }
 .contacts__btn:hover,
 .contacts__btn:active {
-	background: var(--color-black);
-	color: var(--color-gold);
-	border: 2px solid var(--color-gold);
+	color: var(--color-white);
 }
 /*contacts styles and*/
 
