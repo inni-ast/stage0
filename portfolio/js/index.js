@@ -1,5 +1,5 @@
 
-import i18Obj from './js/translate.js';
+import { i18Obj } from './translate.js';
 
 console.log('Score: 85\nВёрстка соответствует макету. Ширина экрана 768px 48\nНи на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки 15\nНа ширине экрана 768рх и меньше реализовано адаптивное меню 22');
 
@@ -62,18 +62,37 @@ portfolioBtnAutumn.addEventListener('click', () => {
 	portfolioBtnWinter.classList.remove('active-btn');
 	portfolioBtnAutumn.classList.add('active-btn');
 });
-// функция перевода страницы
-//function getTranslate(language) {
-console.log('hi')
-const elementsForTranslate = $("[data-i18=test]");
-console.log(elementsForTranslate);
-
-//}
 
 
 
+//change color theme
+const changeColor = document.querySelectorAll('.active-btn, .skills, .section-title, .price__title, .price__description, .portfolio__btn, .portfolo, .price, .video, .wrapper, .footer');
+const changeMenuColor = document.querySelector('.header__nav');
+const changeBurgerColor = document.querySelector('.header__burger');
+const titleLinesBlack = document.querySelectorAll('.title__wrap');
+console.log(changeColor);
+console.log(changeMenuColor);
+console.log(changeBurgerColor);
+console.log(titleLinesBlack);
 
 
+const chooseTheme = document.querySelector('.theme-checker');
+chooseTheme.addEventListener('click', () => {
+	const newLocal = 'light-theme';
+	changeColor.forEach((el) => {
+		el.classList.toggle(newLocal);
+	})
+	if (changeMenuColor.classList.contains('header__nav')) {
+		changeMenuColor.classList.toggle('light-menu');
+	};
+	if (changeBurgerColor.classList.contains('header__burger')) {
+		changeBurgerColor.classList.toggle('light-menu');
+	};
+	titleLinesBlack.forEach((el) => {
+		el.classList.toggle('black');
+	})
+
+});
 
 
 
