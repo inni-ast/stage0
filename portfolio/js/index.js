@@ -91,9 +91,40 @@ chooseTheme.addEventListener('click', () => {
 	titleLinesBlack.forEach((el) => {
 		el.classList.toggle('black');
 	})
+	chooseTheme.classList.remove('active');
 
 });
 
+// page translation
 
+console.log(i18Obj['ru']);
+console.log(i18Obj['en']);
+const translateToRu = document.querySelector('.ru');
+const translateToEn = document.querySelector('.en');
+console.log(translateToRu);
+console.log(translateToEn);
 
+translateToRu.addEventListener('click', () => {
+	let lang = 'ru';
+	const words = document.querySelectorAll('[data-i18]');
+	words.forEach((el) => {
+		el.textContent = i18Obj[lang][el.dataset.i18];
+		if (el.placeholder) {
+			el.placeholder = i18Obj[lang][el.dataset.i18];
+			el.textContent = '';
+		}
+	})
+	translateToEn.classList.remove('active');
+	translateToRu.classList.add('active');
+});
+translateToEn.addEventListener('click', () => {
+	let lang = 'en';
+	const words = document.querySelectorAll('[data-i18]');
+	words.forEach((el) => {
+		el.textContent = i18Obj[lang][el.dataset.i18];
+
+	})
+	translateToRu.classList.remove('active');
+	translateToEn.classList.add('active');
+});
 

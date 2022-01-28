@@ -218,6 +218,7 @@ a {
 }
 /*styles for skills start*/
 .skills {
+	margin-bottom: 80px;
 }
 .skills__block {
 	display: flex;
@@ -717,7 +718,6 @@ a {
 	}
 	/* SKILLS*/
 	.skills {
-		min-height: 730px;
 	}
 	.skills__block {
 		justify-content: space-between;
@@ -939,4 +939,10 @@ a {
 .black.title__wrap h2::after {
 	background-color: var(--color-black);
 	color: var(--color-black);
+}
+.theme-checker.active {
+	fill: var(--color-gold);
+}
+.theme-checker {
+	fill: var(--color-white);
 }
