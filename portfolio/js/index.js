@@ -70,13 +70,14 @@ const changeColor = document.querySelectorAll('.active-btn, .skills, .section-ti
 const changeMenuColor = document.querySelector('.header__nav');
 const changeBurgerColor = document.querySelector('.header__burger');
 const titleLinesBlack = document.querySelectorAll('.title__wrap');
+const themeCheckerLink = document.querySelector('.theme-checker');
 console.log(changeColor);
 console.log(changeMenuColor);
 console.log(changeBurgerColor);
 console.log(titleLinesBlack);
 
 
-const chooseTheme = document.querySelector('.theme-checker');
+const chooseTheme = document.querySelector('.header__theme-checker');
 chooseTheme.addEventListener('click', () => {
 	const newLocal = 'light-theme';
 	changeColor.forEach((el) => {
@@ -91,7 +92,10 @@ chooseTheme.addEventListener('click', () => {
 	titleLinesBlack.forEach((el) => {
 		el.classList.toggle('black');
 	})
-	chooseTheme.classList.remove('active');
+	if (themeCheckerLink.classList.contains('active')) {
+		themeCheckerLink.classList.remove('active');
+	} else
+		themeCheckerLink.classList.add('active');
 
 });
 
@@ -128,3 +132,18 @@ translateToEn.addEventListener('click', () => {
 	translateToEn.classList.add('active');
 });
 
+// кеширование изображений
+const seasons = ['winter', 'spring', 'summer', 'autumn'];
+console.log(seasons);
+function preloadImages() {
+	seasons.forEach((el) => {
+		for (let i = 1; i <= 6; i++) {
+			const img = new Image();
+			img.src = `./assets/img/${el}/${i}.jpg`;
+		}
+	})
+};
+preloadImages();
+// local storage
+// let lang =
+// let theme = 
