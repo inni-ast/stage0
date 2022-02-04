@@ -102,7 +102,7 @@ function changeImage(event) {
 		playBtn.classList.add('pause');
 
 	} else if (event.target.classList.contains('warbler')) {
-		currentImg.src = `../assets/img/slavka.jpg`;
+		currentImg.src = `./assets/img/slavka.jpg`;
 		event.target.classList.add('active');
 		thrush.classList.remove('active');
 		nightingale.classList.remove('active');
