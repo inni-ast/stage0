@@ -31,15 +31,15 @@ const audio = new Audio();
 function playAudio(sound) {
 	let birdSound = sound;
 	if (birdSound == 'solovey') {
-		audio.src = `./assets/audio/${audioSounds[3]}.mp3`;
+		audio.src = `../assets/audio/${audioSounds[3]}.mp3`;
 	} else if (birdSound == 'zarynka') {
-		audio.src = `./assets/audio/${audioSounds[4]}.mp3`;
+		audio.src = `../assets/audio/${audioSounds[4]}.mp3`;
 	} else if (birdSound == 'javoronok') {
-		audio.src = `./assets/audio/${audioSounds[2]}.mp3`;
+		audio.src = `../assets/audio/${audioSounds[2]}.mp3`;
 	} else if (birdSound == 'slavka') {
-		audio.src = `./assets/audio/${audioSounds[1]}.mp3`;
+		audio.src = `../assets/audio/${audioSounds[1]}.mp3`;
 	} else {
-		audio.src = `./assets/audio/${audioSounds[0]}.mp3`;
+		audio.src = `../assets/audio/${audioSounds[0]}.mp3`;
 	}
 	if (!isPlay) {
 		audio.currentTime = 0;
@@ -68,7 +68,7 @@ const warbler = document.querySelector('.warbler');
 function changeImage(event) {
 
 	if (event.target.classList.contains('nightingale')) {
-		currentImg.src = `./assets/img/solovey.jpg`;
+		currentImg.src = `../assets/img/solovey.jpg`;
 		warbler.classList.remove('active');
 		lark.classList.remove('active');
 		thrush.classList.remove('active');
@@ -77,7 +77,7 @@ function changeImage(event) {
 		playAudio('solovey');
 
 	} else if (event.target.classList.contains('robin')) {
-		currentImg.src = `./assets/img/zarynka.jpg`;
+		currentImg.src = `../assets/img/zarynka.jpg`;
 		event.target.classList.add('active');
 		warbler.classList.remove('active');
 		lark.classList.remove('active');
@@ -87,7 +87,7 @@ function changeImage(event) {
 
 
 	} else if (event.target.classList.contains('lark')) {
-		currentImg.src = `./assets/img/javoronok.jpg`;
+		currentImg.src = `../assets/img/javoronok.jpg`;
 		event.target.classList.add('active');
 		warbler.classList.remove('active');
 		thrush.classList.remove('active');
@@ -96,7 +96,7 @@ function changeImage(event) {
 		playAudio('javoronok');
 
 	} else if (event.target.classList.contains('warbler')) {
-		currentImg.src = `./assets/img/slavka.jpg`;
+		currentImg.src = `../assets/img/slavka.jpg`;
 		event.target.classList.add('active');
 		thrush.classList.remove('active');
 		nightingale.classList.remove('active');
@@ -105,7 +105,7 @@ function changeImage(event) {
 		playAudio('slavka');
 
 	} else if (event.target.classList.contains('thrush')) {
-		currentImg.src = `./assets/img/drozd.jpg`;
+		currentImg.src = `../assets/img/drozd.jpg`;
 		event.target.classList.add('active');
 		nightingale.classList.remove('active');
 		lark.classList.remove('active');
