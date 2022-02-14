@@ -8,11 +8,18 @@ console.log(` Score 60
 Смена цитаты сопровождается любым другим эффектом, например, изменяется изображение или \nменяется фоновый цвет страницы, или проигрывается звук и т.д * (10)
 Можно выбрать один из двух языков отображения цитат: en/ru или en/be (10)
 `);
+const languageRu = document.querySelector('.ru');
+const languageBy = document.querySelector('.by');
+const languageEn = document.querySelector('.en');
+
+
 
 const quotesBy = './belarusian_quotes.json';
 const quotesRu = './quotes.json';
 const quotesEn = './en-quotes.json';
 let lang = quotesBy;
+
+
 
 async function getQuotes() {
 	const res = await fetch(lang);
@@ -40,45 +47,68 @@ function changeImage() {
 }
 
 // page translation
-const languageRu = document.querySelector('.ru');
-const languageBy = document.querySelector('.by');
-const languageEn = document.querySelector('.en');
+
 
 languageRu.addEventListener('click', () => {
 
 	if (lang == quotesBy || lang == quotesEn) {
 		lang = quotesRu;
 		getQuotes();
+		languageEn.classList.remove('active');
+		languageBy.classList.remove('active');
+		languageRu.classList.add('active');
 	}
-	languageEn.classList.remove('active');
-	languageBy.classList.remove('active');
-	languageRu.classList.add('active');
+
+
+
 }
 );
 languageBy.addEventListener('click', () => {
 	if (lang == quotesRu || lang == quotesEn) {
 		lang = quotesBy;
+
 		getQuotes();
+		languageRu.classList.remove('active');
+		languageEn.classList.remove('active');
+		languageBy.classList.add('active');
 	}
-	languageRu.classList.remove('active');
-	languageEn.classList.remove('active');
-	languageBy.classList.add('active');
+
+
 });
 
 languageEn.addEventListener('click', () => {
 	if (lang == quotesRu || lang == quotesBy) {
 		lang = quotesEn;
+
 		getQuotes();
+		languageRu.classList.remove('active');
+		languageBy.classList.remove('active');
+		languageEn.classList.add('active');
 	}
-	languageRu.classList.remove('active');
-	languageBy.classList.remove('active');
-	languageEn.classList.add('active');
+
+
 });
 
 
+// local storage
+// работает, добавить стили активной кнопки
+
+// function setLocalStorage() {
+// 	localStorage.setItem('lang', lang);
+
+// }
+// window.addEventListener('beforeunload', setLocalStorage);
 
 
+// function getLocalStorage() {
+// 	if (localStorage.getItem('lang')) {
+// 		lang = localStorage.getItem('lang');
+// 	}
 
+// 	getQuotes();
+
+// }
+// window.addEventListener('load', getLocalStorage);
 
 
 
