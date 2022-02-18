@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="assets/red_cross.ico" type="image/x-icon">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1 class="header__title">Play Tic Tac Toe!</h1>
+			<div class="header__logo">
+				<img src="./assets/svg/sun.svg" alt="sun" class="sun">
+			</div>
+		</header>
+		<main class="main container-main">
+			<div class="main__play">
+				<div class="main__box"></div>
+				<div class="main__box"></div>
+				<div class="main__box"></div>
+				<div class="main__box"></div>
+				<div class="main__box"></div>
+				<div class="main__box"></div>
+				<div class="main__box"></div>
+				<div class="main__box"></div>
+				<div class="main__box"></div>
+			</div>
+			<div class="main__table">
+				<h2 class="main__header">Таблица рекордов</h2>
+				<table class="table">
+					<tr class="table__row">
+						<td class="table__cell">Крестики</td>
+						<td class="table__cell cross">0</td>
+					</tr>
+					<tr class="table__row">
+						<td class="table__cell">Нолики</td>
+						<td class="table__cell zero">0</td>
+					</tr>
+					<tr class="table__row">
+						<td class="table__cell">Ничья</td>
+						<td class="table__cell friendship">0</td>
+					</tr>
+				</table>
+
+			</div>
+			<div class="main__wrapper">
+				<div class="main__result">
+					<div class="main__content">result</div>
+					<button class="btn">Новая игра</button>
+				</div>
+			</div>
+		</main>
+		<footer class="footer ">
+			<div class="footer__items">
+				<div class="footer__author ">
+					<span>&copy;</span>
+					<time>2022</time>
+					<a href="https://github.com/inni-ast">inni-ast</a>
+				</div>
+				<div class="footer__school-link">
+					<a href="https://rs.school/js-stage0/">
+						<svg class="icon rss">
+							<use xlink:href="assets/svg/sprite.svg#rss"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="./index.js"></script>
+</body>
+
+</html>
