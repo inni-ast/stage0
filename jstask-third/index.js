@@ -104,7 +104,7 @@ function setLocalStorage() {
 	localStorage.setItem('cross', crossNumber);
 	localStorage.setItem('zero', zeroNumber);
 	localStorage.setItem('friendship', friendshipNumber);
-	if ((Number(crossNumber) + Number(zeroNumber) + Number(friendshipNumber)) >= 10) {
+	if ((Number(crossNumber) + Number(zeroNumber) + Number(friendshipNumber)) >= 11) {
 		clearLocalStorage();
 	}
 };
