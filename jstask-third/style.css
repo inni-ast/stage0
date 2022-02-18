@@ -66,12 +66,10 @@ a {
 .main__wrapper {
 	z-index: -2;
 	visibility: hidden;
-	transition: all 0.5s;
 }
 .active.main__wrapper {
 	z-index: 2;
 	visibility: visible;
-	transition: all 0.5s;
 }
 .main__result {
 	width: 400px;
@@ -117,7 +115,6 @@ a {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	/* background-color: #ffd700; */
 	margin-right: 10vw;
 }
 .main__box {
