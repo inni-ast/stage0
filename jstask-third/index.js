@@ -2,117 +2,135 @@
 "use strict";
 console.log(` Score 60
 Вёрстка (10)
-При загрузке страницы приложения отображается рандомная цитата (10)
-При перезагрузке страницы цитата обновляется (заменяется на другую) (10)
-Есть кнопка, при клике по которой цитата обновляется (заменяется на другую) (10)
-Смена цитаты сопровождается любым другим эффектом, например, изменяется изображение или \nменяется фоновый цвет страницы, или проигрывается звук и т.д * (10)
-Можно выбрать один из двух языков отображения цитат: en/ru или en/be (10)
+При кликах по игровому полю по очереди отображаются крестики и нолики. Первая фигура всегда крестик (10)
+Игра завершается, когда три фигуры выстроились в ряд по вертикали, горизонтали или диагонали (10)
+По окончанию игры выводится её результат - выигравшая фигура и количество ходов от начала игры до её завершения (10)
+Результаты последних 10 игр сохраняются в local storage. Есть таблица рекордов, в которой отображаются результаты предыдущих 10 игр (10)
+Анимации или звуки, или настройки игры. Баллы начисляются за любой из перечисленных пунктов (10)
 `);
-const languageRu = document.querySelector('.ru');
-const languageBy = document.querySelector('.by');
-const languageEn = document.querySelector('.en');
+const square = document.querySelector('.main__play');
+console.log(square);
+let move = 0;// ставить крестик или нолик
+let result = '';
+let moveNumber = 0; // количество ходов
+let crossNumber = 0;
+let zeroNumber = 0;
+let friendshipNumber = 0;
+const resultWindow = document.querySelector('.main__wrapper');
+const mainResult = document.querySelector('.main__result');
+const whoWin = document.querySelector('.main__content');
+const btn = document.querySelector('.btn');
+const cross = document.querySelector('.cross');
+const zero = document.querySelector('.zero');
+const friendship = document.querySelector('.friendship');
 
 
-
-const quotesBy = './belarusian_quotes.json';
-const quotesRu = './quotes.json';
-const quotesEn = './en-quotes.json';
-let lang = quotesBy;
-
-
-
-async function getQuotes() {
-	const res = await fetch(lang);
-	const data = await res.json();
-	console.log(data);
-	function showData(data) {
-		const quote = document.querySelector('.main__text');
-		quote.textContent = data[Math.floor(Math.random() * data.length)].text;
-		console.log(quote.textContent);
+square.addEventListener('click', event => {
+	if (event.target.className == 'main__box' && event.target.innerHTML == '') {
+		move % 2 === 0 ? event.target.innerHTML = "X" : event.target.innerHTML = "0";
+		move++;
+		moveNumber++;
+		checkWinner();
 	}
-	showData(data);
-}
-getQuotes();
-
-const btn = document.querySelector('.main__btn');
-btn.addEventListener('click', getQuotes);
-
-
-
-btn.addEventListener('click', changeImage);
-//change images
-const image = document.querySelector('.image__item');
-function changeImage() {
-	image.src = `./assets/img/${Math.round(Math.random() * 9)}.jpg`;
-}
-
-// page translation
-
-
-languageRu.addEventListener('click', () => {
-
-	if (lang == quotesBy || lang == quotesEn) {
-		lang = quotesRu;
-		getQuotes();
-		languageEn.classList.remove('active');
-		languageBy.classList.remove('active');
-		languageRu.classList.add('active');
-	}
-
-
-
-}
-);
-languageBy.addEventListener('click', () => {
-	if (lang == quotesRu || lang == quotesEn) {
-		lang = quotesBy;
-
-		getQuotes();
-		languageRu.classList.remove('active');
-		languageEn.classList.remove('active');
-		languageBy.classList.add('active');
-	}
-
 
 });
 
-languageEn.addEventListener('click', () => {
-	if (lang == quotesRu || lang == quotesBy) {
-		lang = quotesEn;
-
-		getQuotes();
-		languageRu.classList.remove('active');
-		languageBy.classList.remove('active');
-		languageEn.classList.add('active');
+const checkWinner = () => {
+	const allBoxes = document.querySelectorAll('.main__box');
+	const array = [
+		[0, 1, 2],
+		[3, 4, 5],
+		[6, 7, 8],
+		[0, 3, 6],
+		[1, 4, 7],
+		[2, 5, 8],
+		[0, 4, 8],
+		[2, 4, 6],
+	];
+	for (let i = 0; i < array.length; i++) {
+		if (allBoxes[array[i][0]].innerHTML == "X" && allBoxes[array[i][1]].innerHTML == "X" && allBoxes[array[i][2]].innerHTML == "X") {
+			result = 'крестики';
+			console.log(typeof numberGames);
+			crossNumber++;
+			showWinner(result);
+			showTableResult(crossNumber);
+		} else if (allBoxes[array[i][0]].innerHTML == "0" && allBoxes[array[i][1]].innerHTML == "0" && allBoxes[array[i][2]].innerHTML == "0") {
+			result = 'нолики';
+			zeroNumber++;
+			showWinner(result);
+			showTableResult(zeroNumber);
+		}
+	}
+	if (((moveNumber === 9) && (result != 'крестики')) && ((moveNumber === 9) && (result != 'нолики'))) {
+		result = 'Ничья';
+		friendshipNumber++;
+		showWinner(result);
+		showTableResult(friendshipNumber);
 	}
 
+};
 
-});
+const showWinner = (checkWinner) => {
+	resultWindow.classList.add('active');
+	square.style.display = 'none';
+	if (result == 'Ничья') {
+		whoWin.innerHTML = `${checkWinner} Количество ходов ${moveNumber}`;
+	} else {
+		whoWin.innerHTML = `Победили ${checkWinner}! Количество ходов ${moveNumber}`;
+	}
 
+};
 
-// local storage
-// работает, добавить стили активной кнопки
-
-// function setLocalStorage() {
-// 	localStorage.setItem('lang', lang);
-
-// }
-// window.addEventListener('beforeunload', setLocalStorage);
-
-
-// function getLocalStorage() {
-// 	if (localStorage.getItem('lang')) {
-// 		lang = localStorage.getItem('lang');
-// 	}
-
-// 	getQuotes();
-
-// }
-// window.addEventListener('load', getLocalStorage);
+const closeResultWindow = () => {
+	resultWindow.classList.remove('active');
+	square.style.display = 'flex';
+	location.reload();
 
 
+};
+
+btn.addEventListener('click', closeResultWindow);
+
+const showTableResult = () => {
+	cross.textContent = crossNumber;
+	zero.textContent = zeroNumber;
+	friendship.textContent = friendshipNumber;
+
+}
+
+//local storage
+
+function setLocalStorage() {
+	localStorage.setItem('cross', crossNumber);
+	localStorage.setItem('zero', zeroNumber);
+	localStorage.setItem('friendship', friendshipNumber);
+	if ((Number(crossNumber) + Number(zeroNumber) + Number(friendshipNumber)) >= 10) {
+		clearLocalStorage();
+	}
+};
+window.addEventListener('beforeunload', setLocalStorage);
 
 
+function getLocalStorage() {
+	if (localStorage.getItem('cross')) {
+		crossNumber = localStorage.getItem('cross');
+		cross.textContent = crossNumber;
+	}
+	if (localStorage.getItem('zero')) {
+		zeroNumber = localStorage.getItem('zero');
+		zero.textContent = zeroNumber;
+	}
+	if (localStorage.getItem('friendship')) {
+		friendshipNumber = localStorage.getItem('friendship');
+		friendship.textContent = friendshipNumber;
+	}
+
+};
+window.addEventListener('load', getLocalStorage);
+
+function clearLocalStorage() {
+	localStorage.clear();
+};
 
 
 
