@@ -30,6 +30,7 @@ square.addEventListener('click', event => {
 		move % 2 === 0 ? event.target.innerHTML = "X" : event.target.innerHTML = "0";
 		move++;
 		moveNumber++;
+		moveSound();
 		checkWinner();
 	}
 
@@ -52,11 +53,14 @@ const checkWinner = () => {
 			result = 'крестики';
 			console.log(typeof numberGames);
 			crossNumber++;
+			winnerSound()
 			showWinner(result);
 			showTableResult(crossNumber);
+
 		} else if (allBoxes[array[i][0]].innerHTML == "0" && allBoxes[array[i][1]].innerHTML == "0" && allBoxes[array[i][2]].innerHTML == "0") {
 			result = 'нолики';
 			zeroNumber++;
+			winnerSound()
 			showWinner(result);
 			showTableResult(zeroNumber);
 		}
@@ -64,6 +68,7 @@ const checkWinner = () => {
 	if (((moveNumber === 9) && (result != 'крестики')) && ((moveNumber === 9) && (result != 'нолики'))) {
 		result = 'Ничья';
 		friendshipNumber++;
+		winnerSound()
 		showWinner(result);
 		showTableResult(friendshipNumber);
 	}
@@ -132,6 +137,19 @@ function clearLocalStorage() {
 	localStorage.clear();
 };
 
+// sounds
+const audio = new Audio();
+let isPlay = false;
+const audioSounds = ['move', 'winner'];
 
+function moveSound() {
+	audio.src = `./assets/audio/${audioSounds[0]}.mp3`;
+	audio.play();
+	isPlay = true;
+};
 
-
+function winnerSound() {
+	audio.src = `./assets/audio/${audioSounds[1]}.mp3`;
+	audio.play();
+	isPlay = true;
+};
