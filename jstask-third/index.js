@@ -16,6 +16,12 @@ let moveNumber = 0; // количество ходов
 let crossNumber = 0;
 let zeroNumber = 0;
 let friendshipNumber = 0;
+const audio = new Audio();
+let isPlay = true;
+const audioSounds = ['move', 'winner'];
+
+
+
 const resultWindow = document.querySelector('.main__wrapper');
 const mainResult = document.querySelector('.main__result');
 const whoWin = document.querySelector('.main__content');
@@ -51,7 +57,6 @@ const checkWinner = () => {
 	for (let i = 0; i < array.length; i++) {
 		if (allBoxes[array[i][0]].innerHTML == "X" && allBoxes[array[i][1]].innerHTML == "X" && allBoxes[array[i][2]].innerHTML == "X") {
 			result = 'крестики';
-			console.log(typeof numberGames);
 			crossNumber++;
 			winnerSound()
 			showWinner(result);
@@ -109,6 +114,7 @@ function setLocalStorage() {
 	localStorage.setItem('cross', crossNumber);
 	localStorage.setItem('zero', zeroNumber);
 	localStorage.setItem('friendship', friendshipNumber);
+	localStorage.setItem('sound', isPlay);
 	if ((Number(crossNumber) + Number(zeroNumber) + Number(friendshipNumber)) >= 11) {
 		clearLocalStorage();
 	}
@@ -138,18 +144,32 @@ function clearLocalStorage() {
 };
 
 // sounds
-const audio = new Audio();
-let isPlay = false;
-const audioSounds = ['move', 'winner'];
+
 
 function moveSound() {
-	audio.src = `./assets/audio/${audioSounds[0]}.mp3`;
-	audio.play();
-	isPlay = true;
+	if (isPlay) {
+		audio.src = `./assets/audio/${audioSounds[0]}.mp3`;
+		audio.play();
+	}
+};
+function winnerSound() {
+	if (isPlay) {
+		audio.src = `./assets/audio/${audioSounds[1]}.mp3`;
+		audio.play();
+	}
 };
 
-function winnerSound() {
-	audio.src = `./assets/audio/${audioSounds[1]}.mp3`;
-	audio.play();
+const sound = document.getElementById('yes');
+const noSound = document.getElementById('no');
+
+sound.addEventListener('click', () => {
 	isPlay = true;
-};
+
+
+});
+noSound.addEventListener('click', () => {
+	isPlay = false;
+
+}
+);
+

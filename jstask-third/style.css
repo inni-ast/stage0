@@ -57,6 +57,10 @@ a {
 }
 .header__logo {
 }
+.label {
+	margin-right: 50px;
+}
+
 .sun {
 	max-width: 100%;
 	max-height: 100%;
